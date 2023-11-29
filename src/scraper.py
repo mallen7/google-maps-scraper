@@ -10,7 +10,13 @@ from selenium.common.exceptions import  StaleElementReferenceException
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-Options.add_argument("--no-sandbox")
+# Create an instance of Options
+chrome_options = Options()
+
+# Add arguments by calling add_argument on the instance
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
 
 def process_reviews(reviews):
     processed_reviews = []
