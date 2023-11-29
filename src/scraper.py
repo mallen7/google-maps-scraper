@@ -7,6 +7,10 @@ from .reviews_scraper import GoogleMapsAPIScraper
 from time import sleep, time
 from botasaurus.utils import retry_if_is_error
 from selenium.common.exceptions import  StaleElementReferenceException
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options.add_argument("--no-sandbox")
 
 def process_reviews(reviews):
     processed_reviews = []
