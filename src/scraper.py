@@ -10,7 +10,7 @@ from selenium.common.exceptions import  StaleElementReferenceException
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-options.add_argument("--no-sandbox")
+Options.add_argument("--no-sandbox")
 
 def process_reviews(reviews):
     processed_reviews = []
