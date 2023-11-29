@@ -1,5 +1,14 @@
+import sys
 from src.gmaps import Gmaps
-star_it = '''Love It? Star It! ⭐ https://github.com/omkarcloud/google-maps-scraper/'''
 
-queries = ["web developers in bangalore"]
-Gmaps.places(queries, max=5)
+
+# Check if a command-line argument is provided
+if len(sys.argv) > 1:
+    query = sys.argv[1]
+else:
+    print("Please provide a query as a command-line argument.")
+    sys.exit(1)
+
+# Use the provided query
+queries = [query]
+Gmaps.places(queries, has_website=True, has_phone=True, max=5)
